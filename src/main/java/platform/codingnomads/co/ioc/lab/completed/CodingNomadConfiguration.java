@@ -32,4 +32,14 @@ public class CodingNomadConfiguration {
     public SoundSystem soundSystem() {
         return SoundSystem.builder().type("Speakers").brand("Bose").build();
     }
+
+    @Bean
+    public Computer computer() {
+        return Computer.builder().name("Razor").memorySize("10GB").build();
+    }
+
+    @Bean
+    public Desk desk() {
+        return Desk.builder().color("White").height("29in").build();
+    }
 }
