@@ -19,4 +19,9 @@
         <property name="version" value="11"/>
     </bean>
 
+    <bean id="cat" class="platform.codingnomads.co.corespring.lab.Cat">
+        <property name="bread" value="Norwegian Forest cat" />
+        <property name="color" value="orange"/>
+    </bean>
+
 </beans>

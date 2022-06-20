@@ -1,5 +1,8 @@
 package platform.codingnomads.co.corespring.lab;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dog {
     String name;
     String bread;
@@ -16,7 +19,6 @@ public class Dog {
     public void setName(String name) {
         this.name = name;
     }
-
     public String getBread() {
         return bread;
     }
