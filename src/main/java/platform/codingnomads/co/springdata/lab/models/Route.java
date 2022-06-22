@@ -4,6 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -40,10 +43,32 @@ public class Route implements Serializable {
     )
     private Area destination;
 
+    @ManyToMany(mappedBy = "routes")
+    private List<PointOfInterest> pointsOfInterest;
+
     @Builder
     public Route(Area origin, Area destination) {
         this.origin = origin;
         this.destination = destination;
         this.code = (origin.getCode() + "-" + destination.getCode());
+    }
+
+    public void addPointOfInterest(PointOfInterest pointOfInterest) {
+        if (this.pointsOfInterest == null) {
+            this.pointsOfInterest = new ArrayList<>(Collections.singletonList(pointOfInterest));
+        } else {
+            this.pointsOfInterest.add(pointOfInterest);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Route{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", origin=" + origin.toStringWithoutPoi() +
+                ", destination=" + destination.toStringWithoutPoi() +
+                ", pointsOfInterest=" + pointsOfInterest +
+                '}';
     }
 }
