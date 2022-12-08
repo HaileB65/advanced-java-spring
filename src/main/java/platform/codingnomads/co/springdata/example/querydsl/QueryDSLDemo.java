@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.Transactional;
 import platform.codingnomads.co.springdata.example.querydsl.models.Area;
-import platform.codingnomads.co.springdata.example.querydsl.models.QArea;
+//import platform.codingnomads.co.springdata.example.querydsl.models.QArea;
 import platform.codingnomads.co.springdata.example.querydsl.models.Route;
 import platform.codingnomads.co.springdata.example.querydsl.models.SearchQuery;
 import platform.codingnomads.co.springdata.example.querydsl.repository.AreaRepository;
@@ -66,13 +66,13 @@ public class QueryDSLDemo implements CommandLineRunner {
         routesByCodeAndOrigin.forEach(System.out::println);
 
         //query the database straight-up without using repository
-        QArea qArea = QArea.area;
+//        QArea qArea = QArea.area;
         JPAQuery<?> query = new JPAQuery<>(entityManager);
-        Area area = query.select(qArea)
-                .from(qArea)
-                .where(qArea.code.eq("A"))
-                .fetchOne();
-        System.out.println(area);
+//        Area area = query.select(qArea)
+//                .from(qArea)
+//                .where(qArea.code.eq("A"))
+//                .fetchOne();
+//        System.out.println(area);
 
         routeRepository.deleteAll();
         areaRepository.deleteAll();

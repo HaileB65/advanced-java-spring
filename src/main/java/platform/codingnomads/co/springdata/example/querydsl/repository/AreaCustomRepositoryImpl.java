@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport
 import org.springframework.stereotype.Repository;
 import platform.codingnomads.co.springdata.example.querydsl.models.Area;
 import platform.codingnomads.co.springdata.example.querydsl.models.QArea;
+//import platform.codingnomads.co.springdata.example.querydsl.models.QArea;
 
 @Repository
 public class AreaCustomRepositoryImpl extends QuerydslRepositorySupport implements AreaCustomRepository {

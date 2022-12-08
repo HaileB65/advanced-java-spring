@@ -18,34 +18,34 @@ public class GreetingServiceAspect {
     private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(GreetingServiceAspect.class);
 
     // Advice before the Point-cut defined by executeLogging
-    @Before(Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.GreetingService.greeting())"))
-    public void logMethodCall(JoinPoint joinPoint) {
-        // Using StringBuilder to build the message that will be logged
-        StringBuilder message = new StringBuilder("Before : ");
-        message.append(joinPoint.getSignature().getName());
-//        final Object[] args = joinPoint.getArgs();
-//        if (args != null && args.length > 0) {
-//            message.append("method args=|");
-//            Arrays.asList(args).forEach(arg -> {
-//                message.append("arg=").append(arg).append("|");
-//            });
-//        }
-        LOGGER.info(message.toString());
-    }
-    @After(Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.GreetingService.greeting())"))
-    public void logMethodCall(JoinPoint joinPoint) {
-        // Using StringBuilder to build the message that will be logged
-        StringBuilder message = new StringBuilder("After : ");
-        message.append(joinPoint.getSignature().getName());
-//        final Object[] args = joinPoint.getArgs();
-//        if (args != null && args.length > 0) {
-//            message.append("method args=|");
-//            Arrays.asList(args).forEach(arg -> {
-//                message.append("arg=").append(arg).append("|");
-//            });
-//        }
-        LOGGER.info(message.toString());
-    }
+//    @Before(Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.GreetingService.greeting())"))
+//    public void logMethodCall(JoinPoint joinPoint) {
+//        // Using StringBuilder to build the message that will be logged
+//        StringBuilder message = new StringBuilder("Before : ");
+//        message.append(joinPoint.getSignature().getName());
+////        final Object[] args = joinPoint.getArgs();
+////        if (args != null && args.length > 0) {
+////            message.append("method args=|");
+////            Arrays.asList(args).forEach(arg -> {
+////                message.append("arg=").append(arg).append("|");
+////            });
+////        }
+//        LOGGER.info(message.toString());
+//    }
+//    @After(Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.GreetingService.greeting())"))
+//    public void logMethodCall(JoinPoint joinPoint) {
+//        // Using StringBuilder to build the message that will be logged
+//        StringBuilder message = new StringBuilder("After : ");
+//        message.append(joinPoint.getSignature().getName());
+////        final Object[] args = joinPoint.getArgs();
+////        if (args != null && args.length > 0) {
+////            message.append("method args=|");
+////            Arrays.asList(args).forEach(arg -> {
+////                message.append("arg=").append(arg).append("|");
+////            });
+////        }
+//        LOGGER.info(message.toString());
+//    }
 
     // Define the Point-cut expression
     @Pointcut("execution(* platform.codingnomads.co.aspectorientedprogramming.lab.GreetingService.greeting2())")
