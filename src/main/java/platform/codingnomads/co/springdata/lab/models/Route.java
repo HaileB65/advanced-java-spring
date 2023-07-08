@@ -15,7 +15,6 @@ import java.util.List;
 @Setter
 @Table(name = "routes")
 @Builder
-@ToString
 public class Route implements Serializable {
 
     private static final long serialVersionUID = -2624055642258734917L;
